@@ -21,8 +21,6 @@ html {
 body {
 /* font family here =>> */ font-family: 'Montserrat', sans-serif; /* 100 - 200 - 500 - 800 */
 color: var(--font-color, black);
-height: 3000px;
-overflow: hidden;
 }
 
 .containar {
