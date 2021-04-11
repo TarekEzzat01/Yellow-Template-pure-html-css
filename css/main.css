@@ -21,10 +21,10 @@ html {
 body {
 /* font family here =>> */ font-family: 'Montserrat', sans-serif; /* 100 - 200 - 500 - 800 */
 color: var(--font-color, black);
+
 }
 
 .containar {
-    padding: 0 20px;
     margin: 0 auto;
 }
 
@@ -39,7 +39,73 @@ color: var(--font-color, black);
     font-size: 18px;
 }
 
+h1 {
+    font-size: 48px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+
+h2 {
+    text-transform: capitalize;
+}
+
+h1 + p {
+    font-size: 16px;
+    font-weight: var(--weight-500);
+    line-height: 2.5;
+    letter-spacing: .1px;
+    margin: 50px 0;
+}
+
+h2 + p {
+    font-size: 16px;
+    font-weight: var(--weight-500);
+    line-height: 2;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 767px) {
+    h1 {
+        text-align: center;
+    }
+
+        h1 + p {
+            letter-spacing: 1px;
+            text-align: center;
+        }
+}
+
+
 /* start media */
+@media (min-width: 768px) {
+    .header {
+        padding: 0;
+    }
+
+    .bannar {
+        padding: 0;
+    }
+    .protoflio {
+        padding: 0;
+    }
+
+    .protoflio .navs {
+        justify-content: space-around;
+    }
+
+    .about {
+        padding: 0 30px;
+        margin-top: 50px;
+    }
+
+    .contact .photo img {
+        display: none;
+    }
+    .about .containar .photo::before {
+        display: none;
+    }
+}
 
 /* small */
 
@@ -54,6 +120,13 @@ color: var(--font-color, black);
 @media (min-width: 992px) {
     .containar {
         width: 970px;
+    }
+    .contact .photo img {
+        display: block;
+    }
+
+    .about .containar .photo::before {
+        display: block;
     }
 
 }
@@ -103,7 +176,7 @@ color: var(--font-color);
 font-weight: var(--weight-400);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
     .header {
         padding: 0px 0px;
@@ -150,7 +223,7 @@ font-weight: var(--weight-400);
 /* end header */
 /* start bannar */
 
-.bannar {padding: 0 60px;}
+.bannar {padding: 0 60px;margin-bottom: 50px;}
 
 .bannar .containar {
     display: grid;
@@ -210,10 +283,6 @@ font-weight: var(--weight-400);
     margin-top: 100px;
 }
 
-.protoflio h1 {
-    font-size: 48px;
-    text-transform: uppercase;
-}
 
 .protoflio .navs {
     display: flex;
@@ -244,6 +313,9 @@ font-weight: var(--weight-400);
     border: none;
     background-color: inherit;
 }
+.navs select:focus {
+    outline: none;
+}
 
 
 .navs select option {
@@ -257,7 +329,6 @@ font-weight: var(--weight-400);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    margin-bottom: 50px;
 }
 
 .protoflio .containar img {
@@ -299,7 +370,7 @@ font-weight: var(--weight-400);
     }
 
     .navs select {
-        display: none;
+        display: none;  
     }
 
     .protoflio .containar {
@@ -310,5 +381,205 @@ font-weight: var(--weight-400);
         display: none;
     }
 }
+.protoflio .btn {
+    margin-top: 25px;
+}
 
 /* end protfolio */
+/* start about us */
+
+.about {
+    padding: 0 60px;
+    margin-top: 100px;
+}
+
+
+.about .containar {
+    padding:inherit;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    overflow: hidden;
+}
+
+.about .containar .photo {
+    width: 30%;
+    justify-content: center;
+    position: relative;
+    
+}
+
+.about .containar .photo img {
+    width: 100%;
+    height: 75%;
+}
+.about .containar .photo::before {
+    position:absolute;
+    content: "Tarek Ezzat";
+    font-size: 12px;
+    padding: 15px;
+    font-weight: var(--weight-800);
+    color: var(--font-color);
+    text-align: center;
+    width: 175px;
+    background-color: var(--min-color);
+    bottom: 25%;
+    left: 0;
+    border-radius: 0 10px 0 0;
+
+}
+
+.about .containar .text {
+    width: 30%;
+}
+
+.about .containar .text h2 {
+    text-transform: capitalize;
+}
+
+@media (max-width: 767px) {
+    .about {
+        margin-top: 50px;
+        padding: 0 30px;
+    }
+
+    .about .containar {
+        display: block;
+    }
+
+    .about .containar .photo:first-of-type {
+        display: none;
+    }
+    .about .containar .photo::before {
+        display: none;
+    }
+
+    .about .containar .photo {
+        width: 100%;}
+
+    .about .containar .text {
+            text-align: center;
+            width: 100%;
+        }
+}
+
+/*end about us */ 
+/*start blog */ 
+.blog {
+    padding: 0 60px;
+}
+
+
+.blog .containar {
+    padding:inherit;
+    display: flex;
+}
+
+.bloger {
+    width: calc(97% / 3);
+    margin-right: 1%;
+}
+
+.bloger img {
+    width: 100%;
+    height: 50%;
+    text-align: center;
+}
+@media (max-width: 767px) {
+.blog .containar {
+    display: block;
+    padding: 0;
+}
+.bloger {
+    width: 100%;
+    height: 75%;
+    text-align: center;
+}
+
+.bloger:nth-child(2){
+    display: none;
+}
+
+.bloger:last-child{
+    display: none;
+}
+
+}
+/*end blog*/
+/*start contact us */
+.contact {
+    padding: 0 60px;
+}
+
+
+.contact .containar {
+    padding:inherit;
+    display: flex;
+}
+
+.contact .font {
+    width: 47%;
+}
+
+.font input {
+    display: block;
+    margin-bottom: 20px;
+    border: none;
+}
+
+.font textarea {
+    margin: 0px;
+    width: 347px;
+    height: 97px;
+    border: none;
+}
+
+.font .btn {
+    margin: 25px 0 0;
+}
+
+.contact .containar .photo {
+    width: 47%;
+    text-align: center;
+}
+
+.contact .containar .photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 10px 10px;
+}
+
+@media (max-width: 767px) {
+    .contact {
+    }
+
+    .contact .containar {
+        display: block;
+        padding: 0;
+    }
+
+    .contact .font {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .contact .containar .photo {
+        display: none;
+    }
+
+    input {
+        width: 100%;
+        border: 5px solid var(--sec-color);
+    }
+    .font textarea {
+        width: 265px;
+        height: 75px;
+        border: 5px solid var(--sec-color);
+    }
+}
+
+/*end contact us */
+
+/* start footer */
+
+/* end footer */
