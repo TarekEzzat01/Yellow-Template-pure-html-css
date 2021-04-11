@@ -74,7 +74,17 @@ h2 + p {
             letter-spacing: 1px;
             text-align: center;
         }
-}
+
+        .header .containar .list {
+            display: none;
+        }
+
+        .header i:hover + .list {
+            display: block;
+            transition: .3s;
+        }
+ }
+
 
 
 /* start media */
@@ -113,6 +123,10 @@ h2 + p {
     .containar {
         width: 750px;
     }
+    .header i {
+        display: none;
+    }
+
 }
 
 /* mediume */
@@ -128,7 +142,6 @@ h2 + p {
     .about .containar .photo::before {
         display: block;
     }
-
 }
 
 /* larage */
@@ -144,6 +157,11 @@ h2 + p {
 /* start header */
 
 .header {padding: 0 60px;}
+
+.header i {
+    cursor: pointer;
+    transition: .3s;
+}
 
 .header img {
     width: 150px;
@@ -581,5 +599,58 @@ font-weight: var(--weight-400);
 /*end contact us */
 
 /* start footer */
+
+.footer-one {
+    padding: 0 60px;
+    margin: 100px 0 ;
+}
+
+.footer-one .containar {
+    display: flex;
+    text-align: center;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+.footer-one .containar i {
+    color: var(--font-color) !important;
+}
+
+.footer-two {
+    padding: 0 60px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #00000094;
+    color: white;
+}
+
+.footer-two .logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-two .logo h4 {margin-left: -110px}
+
+.footer-two .btn {
+    padding: 15px;
+    border: none;
+    text-transform: capitalize;
+    font-weight: 400;
+    border-radius: 10%;
+    font-size: 18px;
+    margin-top: 35px;
+    background-color: initial;
+    height: 50px;
+    color: var(--weight-800);
+}
+@media (max-width: 767px) {
+.footer-two {
+    padding: 0 3px;
+    display: block;
+    background-color: #00000094;
+    text-align: center;
+}
+}
+
 
 /* end footer */
